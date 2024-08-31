@@ -6,6 +6,12 @@
     <link rel="icon" type="image/svg+xml" href="favicon.png" />
     <title>Happy Birthday, Dad!</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
     <style>
       @keyframes fall {
         0% {
@@ -20,24 +26,34 @@
         font-size: 24px;
         animation: fall linear infinite;
       }
+      .luckiest-guy-regular {
+        font-family: 'Luckiest Guy', cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
 
       body {
         cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 C10 2 6 6 6 12 C6 18 10 22 16 28 C22 22 26 18 26 12 C26 6 22 2 16 2 Z' fill='red' stroke='black' stroke-width='1'/%3E%3Cpath d='M16 2 C13 2 11 3 11 5 C11 7 13 8 16 8 C19 8 21 7 21 5 C21 3 19 2 16 2 Z' fill='pink'/%3E%3C/svg%3E")
             16 16,
           auto;
       }
+      html {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body
-    class="bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen flex items-center justify-center"
+    class="bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen flex items-center justify-center relative overflow-hidden"
   >
     <div
-      class="absolute inset-0 flex items-center justify-center background-number text-[80vh] font-black text-white/5"
+      class="absolute flex items-center justify-center text-[80vh] font-black text-white/5 overflow-hidden"
     >
-      52
+      50
     </div>
     <div class="text-center z-10 flex flex-col items-center">
-      <h1 class="text-6xl font-bold text-white mb-4 animate-bounce">
+      <h1
+        class="text-7xl text-white mb-4 animate-bounce px-4 luckiest-guy-regular"
+      >
         Happy Birthday, Dad!
       </h1>
       <p class="text-2xl text-white mb-8 max-w-[20rem]">
