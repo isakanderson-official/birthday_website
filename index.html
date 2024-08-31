@@ -42,14 +42,14 @@
       }
     </style>
   </head>
+  <div
+    class="absolute flex items-center justify-center text-[80vh] font-black text-white/5 overflow-hidden"
+  >
+    50
+  </div>
   <body
     class="bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen flex items-center justify-center relative overflow-hidden"
   >
-    <div
-      class="absolute flex items-center justify-center text-[80vh] font-black text-white/5 overflow-hidden"
-    >
-      50
-    </div>
     <div class="text-center z-10 flex flex-col items-center">
       <h1
         class="text-7xl text-white mb-4 animate-bounce px-4 luckiest-guy-regular"
@@ -82,7 +82,7 @@
     }
 
     function startCelebration() {
-      setInterval(createEmoji, 20);
+      setInterval(createEmoji, 100);
     }
 
     document.getElementById('celebrate').addEventListener('click', () => {
