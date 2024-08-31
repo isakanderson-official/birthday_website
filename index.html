@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <title>Happy Birthday, Dad!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fall {
+        0% {
+          transform: translateY(-100vh);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+      .emoji {
+        position: fixed;
+        font-size: 24px;
+        animation: fall linear infinite;
+      }
+
+      body {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 C10 2 6 6 6 12 C6 18 10 22 16 28 C22 22 26 18 26 12 C26 6 22 2 16 2 Z' fill='red' stroke='black' stroke-width='1'/%3E%3Cpath d='M16 2 C13 2 11 3 11 5 C11 7 13 8 16 8 C19 8 21 7 21 5 C21 3 19 2 16 2 Z' fill='pink'/%3E%3C/svg%3E")
+            16 16,
+          auto;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="absolute inset-0 flex items-center justify-center background-number text-[80vh] font-black text-white/5"
+    >
+      52
+    </div>
+    <div class="text-center z-10 flex flex-col items-center">
+      <h1 class="text-6xl font-bold text-white mb-4 animate-bounce">
+        Happy Birthday, Dad!
+      </h1>
+      <p class="text-2xl text-white mb-8 max-w-[20rem]">
+        Wishing you an amazing day filled with joy and laughter!
+      </p>
+      <button
+        id="celebrate"
+        class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full text-xl transition duration-300 transform hover:scale-110"
+      >
+        Celebrate! 🎉
+      </button>
+    </div>
+  </body>
+  <script>
+    function createEmoji() {
+      const emoji = document.createElement('div');
+      emoji.textContent = '🎉';
+      emoji.classList.add('emoji');
+      emoji.style.left = `${Math.random() * 100}vw`;
+      emoji.style.animationDuration = `${Math.random() * 2 + 3}s`;
+      document.body.appendChild(emoji);
+
+      emoji.addEventListener('animationiteration', () => {
+        emoji.remove();
+      });
+    }
+
+    function startCelebration() {
+      setInterval(createEmoji, 20);
+    }
+
+    document.getElementById('celebrate').addEventListener('click', () => {
+      startCelebration();
+      document.getElementById('celebrate').disabled = true;
+      document.getElementById('celebrate').textContent = 'Celebrating! 🥳';
+    });
+  </script>
+</html>
